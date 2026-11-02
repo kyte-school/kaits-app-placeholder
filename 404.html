@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KAITS for parents</title>
+<meta name="description" content="The KAITS app for parents: attendance, daily updates, pickups and fees from your child's school.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+<style>
+:root { --ink: #1b2230; --soft: #4a5468; --mute: #7a8396; --paper: #f6f7fb; --card: #fff; --line: #e3e6ef; --violet: #7c5cff; --sky: #22b8f0; --pink: #ff5c8a; color-scheme: light }
+@media (prefers-color-scheme: dark) { :root { --ink: #eef1f8; --soft: #b7bfd0; --mute: #8a93a7; --paper: #0f131c; --card: #171c28; --line: #262d3d; color-scheme: dark } }
+* { box-sizing: border-box }
+html, body { height: 100% }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif; display: flex; align-items: center; justify-content: center; padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)) }
+main { width: 100%; max-width: 420px }
+.brand { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 28px; text-decoration: none; color: inherit }
+.brand img { width: 30px; height: 30px }
+.word { font-family: "Archivo", "Arial Black", sans-serif; font-stretch: 125%; font-weight: 900; font-size: 22px }
+.word .ai { color: var(--violet) }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 28px 24px; box-shadow: 0 18px 40px -24px rgba(27, 34, 48, .35) }
+.bar { display: flex; gap: 6px; margin-bottom: 20px }
+.bar span { height: 6px; flex: 1; border-radius: 99px }
+h1 { font-family: "Archivo", "Arial Black", sans-serif; font-stretch: 116%; font-weight: 900; font-size: 28px; line-height: 1.1; margin: 0 0 10px; text-wrap: balance }
+p { margin: 0 0 12px; color: var(--soft) }
+ul { margin: 16px 0 4px; padding: 0; list-style: none; display: grid; gap: 8px }
+li { display: flex; gap: 10px; align-items: baseline; color: var(--soft) }
+li::before { content: ""; width: 8px; height: 8px; border-radius: 2px; transform: rotate(45deg); flex: none; background: var(--c) }
+.note { margin-top: 18px; padding: 12px 14px; border-radius: 12px; background: var(--paper); font-size: 14px }
+.foot { margin-top: 20px; text-align: center; font-size: 14px; color: var(--mute) }
+.foot a { color: var(--violet); font-weight: 700; text-decoration: none }
+</style>
+</head>
+<body>
+<main>
+  <a class="brand" href="https://kaits.maic.club" aria-label="KAITS"><img src="/assets/kaits-mark.svg" alt=""><span class="word">K<span class="ai">AI</span>TS</span></a>
+  <div class="card">
+    <div class="bar" aria-hidden="true"><span style="background:var(--pink)"></span><span style="background:var(--violet)"></span><span style="background:var(--sky)"></span></div>
+    <h1>KAITS for parents is almost here</h1>
+    <p>This is where you'll activate your account and follow your child's day at school.</p>
+    <ul>
+      <li style="--c:var(--pink)">Attendance and the daily diary</li>
+      <li style="--c:var(--violet)">Pickup updates as they happen</li>
+      <li style="--c:var(--sky)">Fees, receipts and school notices</li>
+    </ul>
+    <p class="note" id="msg">Your school will send you a personal link on WhatsApp when your account is ready. Until then, please contact the school office with any questions.</p>
+  </div>
+  <p class="foot">Learn more at <a href="https://kaits.maic.club">kaits.maic.club</a></p>
+</main>
+<script>
+// A parent opening an activation or payment link before the app is live.
+if (/^\/(i|pay)\//.test(location.pathname)) {
+  document.getElementById('msg').textContent = location.pathname.indexOf('/pay/') === 0
+    ? "Online payment links will open here soon. Until then, please pay at the school office, or contact the school for help."
+    : "Thanks for opening your link. Account activation opens here soon. Until then, please contact the school office with any questions."
+}
+</script>
+</body>
+</html>
