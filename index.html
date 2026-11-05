@@ -18,9 +18,8 @@ html, body { height: 100% }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif; display: flex; align-items: center; justify-content: center; padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)) }
 main { width: 100%; max-width: 420px }
 .brand { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 28px; text-decoration: none; color: inherit }
-.brand img { width: 30px; height: 30px }
-.word { font-family: "Archivo", "Arial Black", sans-serif; font-stretch: 125%; font-weight: 900; font-size: 22px }
-.word .ai { color: var(--violet) }
+.logo { display: block; width: auto; aspect-ratio: 579 / 162; fill: currentColor; fill-rule: evenodd; color: var(--ink) }
+.logo-lg { height: 32px }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 28px 24px; box-shadow: 0 18px 40px -24px rgba(27, 34, 48, .35) }
 .bar { display: flex; gap: 6px; margin-bottom: 20px }
 .bar span { height: 6px; flex: 1; border-radius: 99px }
@@ -35,8 +34,9 @@ li::before { content: ""; width: 8px; height: 8px; border-radius: 2px; transform
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="kaits-logo" viewBox="76 46 579 162"><path d="M76 56C76 52.134 79.134 49 83 49H125C128.866 49 132 52.134 132 56V94.1846C132 96.5154 135.981 97.1708 136.921 95.0377C149.624 66.1994 174.354 50.9095 209.993 49.1679C213.854 48.9792 217 52.134 217 56V101C217 104.866 213.866 108 210 108H172C170.895 108 170 108.895 170 110V110.386C170 111.328 170.667 112.141 171.583 112.359C205.905 120.513 223.397 149.055 224.895 197.985C225.013 201.849 221.866 205 218 205H176C172.134 205 169.015 201.859 168.895 197.995C167.799 162.583 157.964 144.008 134.007 143.04C132.903 142.995 132 143.895 132 145V198C132 201.866 128.866 205 125 205H83C79.134 205 76 201.866 76 198V56Z"/><path d="M285.691 62.1222C288.234 56.833 295.766 56.833 298.309 62.1222L362.176 194.967C364.411 199.614 361.024 205 355.868 205H319.699C316.857 205 314.297 203.281 313.221 200.65L307.779 187.35C306.703 184.719 304.143 183 301.301 183H282.699C279.857 183 277.297 184.719 276.221 187.35L270.779 200.65C269.703 203.281 267.143 205 264.301 205H228.132C222.976 205 219.589 199.614 221.824 194.967L285.691 62.1222ZM298.66 134.586C296.57 128.125 287.43 128.125 285.34 134.586L283.962 138.845C282.499 143.366 285.87 148 290.622 148H293.378C298.13 148 301.501 143.366 300.038 138.845L298.66 134.586Z"/><path d="M385 102C400.464 102 413 89.464 413 74C413 58.536 400.464 46 385 46C369.536 46 357 58.536 357 74C357 89.464 369.536 102 385 102Z"/><path d="M360 120C360 116.134 363.134 113 367 113H403C406.866 113 410 116.134 410 120V198C410 201.866 406.866 205 403 205H367C363.134 205 360 201.866 360 198V120Z"/><path d="M428.153 56.0014C427.978 52.1394 431.134 49 435 49H473C476.866 49 480 52.134 480 56V71C480 74.866 483.134 78 487 78H510C513.866 78 517 81.134 517 85V101C517 104.866 513.866 108 510 108H487C483.134 108 480 111.134 480 115V140C480 152 485 157 497 157C504.313 157 511.626 155.232 518.645 152.578C523.513 150.737 529 154.123 529 159.326V191.938C529 194.45 527.663 196.788 525.431 197.941C512.446 204.647 498.48 208 482 208C442 208 424 191 424 157V120C424 116.134 427.134 113 431 113H465.389C466.279 113 467 112.279 467 111.389C467 110.591 466.406 109.914 465.619 109.779C441.312 105.602 429.597 87.9342 428.153 56.0014Z"/><path d="M638 49C641.866 49 645 52.134 645 56V87C645 90.866 641.866 94 638 94H589C582 94 579 96 579 99C579 102 583 104 591 106L611 112C639 120 655 133 655 157C655 187 635 205 600 205H540C536.134 205 533 201.866 533 198V167C533 163.134 536.134 160 540 160H590C598 160 602 159 602 155C602 152 598 150 590 148L570 142C546 135 531 121 531 97C531 67 551 49 586 49H638Z"/></symbol></svg>
 <main>
-  <a class="brand" href="https://kaits.maic.club" aria-label="KAITS"><img src="/assets/kaits-mark.svg" alt=""><span class="word">K<span class="ai">AI</span>TS</span></a>
+  <a class="brand" href="https://kaits.maic.club"><svg class="logo logo-lg" viewBox="0 0 579 162" role="img" aria-label="KAITS"><use href="#kaits-logo"/></svg></a>
   <div class="card">
     <div class="bar" aria-hidden="true"><span style="background:var(--pink)"></span><span style="background:var(--violet)"></span><span style="background:var(--sky)"></span></div>
     <h1>KAITS for parents is almost here</h1>
